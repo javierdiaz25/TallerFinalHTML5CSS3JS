@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+    <script async src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<div class="bloqueGeneral">
+    <header>
+        <a id="index" href="index.html">
+          <butt>
+            Inicio
+          </butt>
+        </a>
+  
+        <select id="seleccionarTema" onchange='cambiar()'>
+          <option value="light">Light</option>
+          <option value="blue">Blue</option>
+          <option value="space">Space</option>
+        </select>
+  
+        <a id="ejercicios" href="/ejercicios.html">
+          <butt>
+            Ejercicios
+          </butt>
+        </a>
+      </header>
+  <h1 class="tituloTaller">Taller de variables e impresión</h1>
+  <p>
+    A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil Estricto.
+  </p>
+ <ol>
+     <li>
+        Realizar un programa el cual solicite su nombre y apellidos.
+     </li>
+     <pre>
+         <code>
+            Proceso NombreCompleto	
+	
+            Definir Nombre, Apellido Como Caracter;
+            
+            Escribir "Ingrese su nombre";
+            Leer Nombre;
+            
+            Escribir "Ingrese su apellido";
+            Leer Apellido;
+            
+            Limpiar Pantalla;
+            
+            Escribir "Su nombre es ", Nombre, " ", Apellido;
+            
+            FinProceso
+         </code>
+     </pre>
+
+     <li>
+        Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.
+     </li>
+     <pre>
+         <code>
+            Proceso Nombre_Edad_Estatura
+	
+	        Definir Nombre, Apellido Como Caracter;
+                Definir Edad Como Entero;
+	        Definir Estatura Como Real;
+	
+            	Escribir "Ingrese su nombre";
+            	Leer Nombre; 
+	
+            	Escribir "Ingrese su apellido";
+            	Leer Apellido;
+	
+            	Escribir "Ingrese su edad";
+            	Leer Edad;
+	
+            	Escribir "Ingrese su estatura";
+            	Leer Estatura;
+	
+            	Limpiar Pantalla;
+	
+            	Escribir "Su Nombre es ", Nombre," ", Apellido;
+            	Escribir "Su edad es ", Edad, " años";
+            	Escribir "Su estatura es ", Estatura, " metros"; 
+	
+            FinProceso
+
+         </code>
+    </pre>
+
+    <li>
+        Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos de su padre y madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo de [Nombre de la Madre] y [Nombre del Padre].
+     </li>
+     <pre>
+         <code>
+    Proceso Nombres_Familia
+	
+	Definir Nombre, Apellido, NombrePadre, ApellidoPadre, NombreMadre, ApellidoMadre Como Caracter;
+	
+	Escribir "Ingrese su nombre";
+	Leer Nombre;
+	
+	Escribir "Ingrese su apellido";
+	Leer Apellido;
+	
+	Escribir "Ingrese nombre de su padre";
+	Leer NombrePadre;
+	
+	Escribir "Ingrese apellido de su padre";
+	Leer ApellidoPadre;
+	
+	Escribir "Ingrese nombre de su madre";
+	Leer NombreMadre;
+	
+	Escribir "Ingrese apellido de su madre";
+	Leer ApellidoMadre;
+	
+	Limpiar Pantalla;
+	
+	Escribir "Yo ", Nombre, " ", Apellido, " soy hijo de ", NombreMadre, 
+              " ",ApellidoMadre, " y ",NombrePadre," ",ApellidoPadre;	
+	
+    FinProceso
+
+         </code>
+    </pre>
+
+    <li>
+        Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe imprimir en pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del País]
+     </li>
+     <pre>
+         <code>
+            Proceso Ciudad_Capital
+	
+            Definir Ciudad, Pais Como Caracter;
+            
+            Escribir "Ingrese nombre de la ciudad  capital";
+            Leer Ciudad;
+            
+            Escribir "Ingrese nombre del pais";
+            Leer Pais; 
+            
+            Limpiar Pantalla;
+            
+            Escribir "La ciudad ", Ciudad, " es la capital del pais ", Pais;
+            
+        FinProceso
+        
+         </code>
+    </pre>
+
+    <li>
+        Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y su nombre completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es actualmente su dueño(a).
+     </li>
+     <pre>
+         <code>
+Proceso Nombre_Mascota
+	
+	Definir NombreMascota, TipoMascota, Nombre, Apellido Como Caracter;
+	Definir EdadMascota Como Entero;
+	
+	Escribir "Ingrese nombre de su mascota";
+	Leer NombreMascota;
+	
+	Escribir "Ingrese la edad de su mascota";
+	Leer EdadMascota;
+	
+	Escribir "Ingrese el tipo de Mascota";
+	Leer TipoMascota;
+	
+	Escribir "Ingrese su nombre";
+	Leer Nombre;
+	
+	Escribir "Ingrese su apellido";
+	Leer Apellido;
+	
+	Limpiar Pantalla;
+	
+	Escribir NombreMascota, " es un(a) ", TipoMascota, " , el cual, tiene ", EdadMascota, 
+            " años de edad y ", Nombre, " ", Apellido, " es su actual dueño";
+	
+FinProceso
+
+         </code>
+    </pre>
+ </ol>
+    <div class="video">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/5kzH08JmOYQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
+    </div>
+</div>
+</body>
+</html>

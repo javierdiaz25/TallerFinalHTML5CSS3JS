@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+    <script async src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bloqueGeneral">
+    <header>
+        <a id="index" href="index.html">
+          <butt>
+            Inicio
+          </butt>
+        </a>
+  
+        <select id="seleccionarTema" onchange='cambiar()'>
+          <option value="light">Light</option>
+          <option value="blue">Blue</option>
+          <option value="space">Space</option>
+        </select>
+  
+        <a id="ejercicios" href="/ejercicios.html">
+            <butt>
+              Ejercicios
+            </butt>
+          </a>
+      </header>
+  <h1 class="tituloTaller">Taller de Condicionales</h1>
+  <p>
+    A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil Estricto.
+    </p>
+ <ol>
+     <li>
+        Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18 años, deberá mostrar en pantalla: Usted es mayor de edad.
+     </li>
+     <pre>
+         <code>
+            Proceso Edad_Persona_Mayor
+	
+            Definir EdadPersona Como Entero;
+            
+            Escribir "Ingrese la edad de la persona";
+            Leer EdadPersona;
+            
+            si EdadPersona >= 18 Entonces
+                
+                Escribir "Usted es mayor de edad";
+                
+            FinSi
+            
+        FinProceso        
+         </code>
+     </pre>
+
+     <li>
+        Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años, deberá mostrar en pantalla: Usted aún es un niño(a).
+     </li>
+     <pre>
+         <code>
+            Proceso Edad_Persona_Menor
+	
+            Definir EdadPersona Como Entero;
+            
+            Escribir "Ingrese la edad de la persona";
+            Leer EdadPersona;
+            
+            si EdadPersona < 18 Entonces
+                
+                Escribir "Usted aun es un niño(a)";
+                
+            FinSi
+            
+        FinProceso 
+         </code>
+    </pre>
+
+    <li>
+        Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es mayor o igual a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad, por lo tanto puede entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá imprimirse el siguiente mensaje: [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.
+    </li>
+     <pre>
+         <code>
+            Proceso Edad_Mayor_Menor
+	
+            Definir Nombre, Apellidos Como Caracter;
+            Definir Edad Como Entero;
+            
+            Escribir "Ingrese el nombre de la persona";
+            Leer Nombre;
+            
+            Escribir "Ingrese los apellidos de la persona";
+            Leer Apellidos;
+            
+            Escribir "ingrese la edad de la persona"; 
+            Leer Edad;
+            
+            Si Edad >= 18 Entonces
+                
+                Escribir Nombre, " ", Apellidos, " usted es mayor de edad, por lo tanto puede entrar a la fiesta";
+                
+            SiNo
+                
+                Escribir Nombre, " ", Apellidos, " usted es menor de edad, por lo tanto, no puede entrar a la fiesta, 
+                por favor devuelvase para su casa";
+                
+            FinSi
+            
+            
+        FinProceso
+        
+
+         </code>
+    </pre>
+
+    <li>
+        La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir, requiere de una aplicación que permita registrar el alquiler de las películas que adquieren sus usuarios. Para cada usuario se debe permitir la opción de alquilar película, consultar películas disponibles y recibir película en la video tienda con la opción de realizar anotaciones sobre estas si se llegan a presentar daños u otra novedad sobre la película.
+     </li>
+     <pre>
+         <code>
+            Proceso Video_Tienda
+	
+            Definir NombreCliente, DetalleNovedad Como Caracter;
+            Definir Celular Como Entero;
+            Definir OpcionConsulta, OpcionPelicula Como Entero;
+            Definir TiempoPelicula, ValorAlquiler Como Real;
+            Definir NovedadPelicula Como Logico;
+            
+            Escribir "Bienvenido a la Video Tienda, Por favor ingrese sus datos";
+            
+            Escribir "Ingrese su nombre completo";
+            Leer NombreCliente;
+            
+            Escribir "Ingrese su numero de celular";
+            Leer Celular;
+            
+            Limpiar Pantalla;
+            
+            Escribir "A continuacion elija una opcion";
+            
+            Escribir "1. Consultar Peliculas Disponibles";
+            Escribir "2. Devolver Pelicula";
+            Leer OpcionConsulta;
+            
+            Limpiar Pantalla;
+            
+            Segun OpcionConsulta Hacer
+                1: 
+                    Escribir "Las Peliculas Disponibles son las siguientes";
+                    
+                    Escribir "1. Rapido y Furioso 9";
+                    Escribir "2. Jefe en Pañales 2";
+                    Escribir "3. El Paseo 6";
+                    
+                    Escribir "¿Que Pelicula desea alquilar?";
+                    Leer OpcionPelicula;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun OpcionPelicula Hacer 
+                        1:	
+                            Escribir "El Alquiler de la pelicula tiene un costo de 2000 x dia";
+                            
+                            Escribir "Por cuantos dias desea alquilar la pelicula?";
+                            Leer TiempoPelicula;
+                            
+                            ValorAlquiler <- TiempoPelicula * 2000;
+                            
+                            Escribir "El Valor total del alquiler es ", ValorAlquiler;
+                        2:
+                            Escribir "El Alquiler de la pelicula tiene un costo de 2000 x dia";
+                            
+                            Escribir "Por cuantos dias desea alquilar la pelicula?";
+                            Leer TiempoPelicula;
+                            
+                            ValorAlquiler <- TiempoPelicula * 2000;
+                            
+                            Escribir "El Valor total del alquiler es ", ValorAlquiler;
+                        3:
+                            Escribir "El Alquiler de la pelicula tiene un costo de 2000 x dia";
+                            
+                            Escribir "Por cuantos dias desea alquilar la pelicula?";
+                            Leer TiempoPelicula;
+                            
+                            ValorAlquiler <- TiempoPelicula * 2000;
+                            
+                            Escribir "El Valor total del alquiler es ", ValorAlquiler;
+                            
+                        De Otro Modo:
+                            
+                            Escribir "La opcion elegida no existe";
+                            
+                    FinSegun
+                    
+                2:
+                    Escribir "¿Que pelicula desea devolver?";
+                    Escribir "1. Rapido y Furioso 9";
+                    Escribir "2. Jefe en Pañales 2";
+                    Escribir "3. El Paseo 6";
+                    Leer OpcionPelicula;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun OpcionPelicula Hacer
+                        1:
+                            Escribir "¿La pelicula presenta algun daño o novedad?";
+                            Leer NovedadPelicula;
+                            Si NovedadPelicula = Verdadero Entonces
+                                Escribir "Por favor detalle el daño o novedad";
+                                Leer DetalleNovedad;
+                                Escribir "Pedimos mil disculpas, Le devolveremos su dinero";
+                                
+                            SiNo
+                                Escribir "Ok, muchas gracias por preferirnos";
+                                
+                            FinSi
+                        2:
+                            Escribir "¿La pelicula presenta algun daño o novedad?";
+                            Leer NovedadPelicula;
+                            Si NovedadPelicula = Verdadero Entonces
+                                Escribir "Por favor detalle el daño o novedad";
+                                Leer DetalleNovedad;
+                                Escribir "Pedimos mil disculpas, Le devolveremos su dinero";
+                                
+                            SiNo
+                                Escribir "Ok, muchas gracias por preferirnos";
+                                
+                            FinSi
+                        3:
+                            Escribir "¿La pelicula presenta algun daño o novedad?";
+                            Leer NovedadPelicula;
+                            
+                            Si NovedadPelicula = Verdadero Entonces
+                                
+                                Escribir "Por favor detalle el daño o novedad";
+                                Leer DetalleNovedad;
+                                
+                                Escribir "Pedimos mil disculpas, Le devolveremos su dinero";
+                                
+                            SiNo
+                                
+                                Escribir "Ok, muchas gracias por preferirnos";
+                                
+                            FinSi
+                            
+                        De Otro Modo:
+                            
+                            Escribir "La opcion elegida no existe";
+                    FinSegun
+                    
+                De Otro Modo:
+                    
+                    Escribir "La opcion elegida no existe";
+                    
+                    
+            FinSegun
+            
+        FinProceso
+        
+         </code>
+    </pre>
+
+    <li>
+        La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder facturar los productos que vende a sus clientes y para ello, los productos tienen unas características que deben indicársele al cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las opciones de compra de producto, consulta de precios por producto y devoluciones en caso de que se presenten.
+    </li>
+     <pre>
+         <code>
+            Proceso Drogueria
+	
+            Definir NombreCliente Como Caracter;
+            Definir OpcionConsulta, OpcionProducto, Cantidad, Devolucion, CantidadDevolucion Como Entero;
+            Definir Respuesta Como Logico;
+            Definir ValorVenta, ValorDevolucion Como Real;
+            
+            Escribir "Bienvenido a La Drogueria Mi Salud, Por favor ingrese sus datos";
+            
+            Escribir "Ingrese su nombre completo";
+            Leer NombreCliente;
+            
+            Limpiar Pantalla;
+            
+            Escribir "¿Que desea hacer?";
+            Escribir "1. Consultar Pruductos Disponibles";
+            Escribir "2. Devolver Producto";
+            Leer OpcionConsulta;
+            
+            Limpiar Pantalla;
+            
+            Segun 	OpcionConsulta Hacer
+                1:
+                    Escribir "¿Que Pruducto desea llevar?";
+                    Escribir "1. Vitamina C";
+                    Escribir "2. Acetaminofen";
+                    Escribir "3. Pañales etapa 5";
+                    Escribir "4. Jabon";
+                    Leer OpcionProducto;
+                    
+                    Segun OpcionProducto Hacer 
+                        1: 	
+                            Escribir "El valor del sobre de Vitamina C es de $3.500";
+                            Escribir "¿Lo va a llevar?";
+                            Leer Respuesta;
+                            
+                            si Respuesta = Verdadero Entonces
+                                Escribir "¿Cuantos sobres va a llevar?";
+                                Leer Cantidad;
+                                
+                                ValorVenta <- 3500 * Cantidad;
+                                
+                                Escribir "El valor de su factura es de:" , ValorVenta;
+                                escribir "Gracias por su compra";
+                                
+                            SiNo
+                                Escribir "Bueno, con mucho gusto";
+                            FinSi
+                        2:
+                            Escribir "El valor de la tableta por 10 unidades de Acetaminofen es de $1500";
+                            Escribir "¿Lo va a llevar?";
+                            Leer Respuesta;
+                            
+                            si Respuesta = Verdadero Entonces
+                                Escribir "¿Cuantos tabletas va a llevar?";
+                                Leer Cantidad;
+                                
+                                ValorVenta <- 1500 * Cantidad;
+                                
+                                Escribir "El valor de su factura es de:" , ValorVenta;
+                                escribir "Gracias por su compra";
+                                
+                            SiNo
+                                Escribir "Bueno, con mucho gusto";
+                            FinSi
+                        3:
+                            Escribir "El valor de cada pañal etapa 5 es de $2500";
+                            Escribir "¿Lo va a llevar?";
+                            Leer Respuesta;
+                            
+                            si Respuesta = Verdadero Entonces
+                                Escribir "¿Cuantos pañales va a llevar?";
+                                Leer Cantidad;
+                                
+                                ValorVenta <- 2500 * Cantidad;
+                                
+                                Escribir "El valor de su factura es de:" , ValorVenta;
+                                escribir "Gracias por su compra";
+                                
+                            SiNo
+                                Escribir "Bueno, con mucho gusto";
+                            FinSi
+                        4:
+                            Escribir "El valor de cada jabon es de $3000";
+                            Escribir "¿Lo va a llevar?";
+                            Leer Respuesta;
+                            
+                            si Respuesta = Verdadero Entonces
+                                Escribir "¿Cuantos jabones va a llevar?";
+                                Leer Cantidad;
+                                
+                                ValorVenta <- 3000 * Cantidad;
+                                
+                                Escribir "El valor de su factura es de:" , ValorVenta;
+                                escribir "Gracias por su compra";
+                                
+                            SiNo
+                                Escribir "Bueno, con mucho gusto";
+                            FinSi
+                    FinSegun
+                2:
+                    Escribir "¿Que Pruducto desea devolver?";
+                    Escribir "1. Vitamina C";
+                    Escribir "2. Acetaminofen";
+                    Escribir "3. Pañales etapa 5";
+                    Escribir "4. Jabon";
+                    Leer Devolucion;
+                    
+                    Segun Devolucion Hacer	
+                        1: 
+                            Escribir "¿Cuantos Sobres va a devolver?";
+                            Leer CantidadDevolucion;
+                            
+                            ValorDevolucion <- 3500 * CantidadDevolucion;
+                            
+                            Escribir "Le devuelvo ", ValorDevolucion;
+                        2:
+                            Escribir "¿Cuantos tabletas va a devolver?";
+                            Leer CantidadDevolucion;
+                            
+                            ValorDevolucion <- 1500 * CantidadDevolucion;
+                            
+                            Escribir "Le devuelvo ", ValorDevolucion;
+                        3:
+                            Escribir "¿Cuantos pañales va a devolver?";
+                            Leer CantidadDevolucion;
+                            
+                            ValorDevolucion <- 2500 * CantidadDevolucion;
+                            
+                            Escribir "Le devuelvo ", ValorDevolucion;
+                        4:
+                            Escribir "¿Cuantos jabones va a devolver?";
+                            Leer CantidadDevolucion;
+                            
+                            ValorDevolucion <- 3000 * CantidadDevolucion;
+                            
+                            Escribir "Le devuelvo ", ValorDevolucion;
+                    FinSegun
+            FinSegun
+            
+        FinProceso
+        
+
+         </code>
+    </pre>
+
+    <li>
+        El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas revisiones y requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para cada motocicleta se debe tener registro del ingreso al taller y las observaciones por parte del cliente. También debe existir registro de salida del taller con las novedades y otra de arreglos hechos por el mecánico en caso de que se requiera inventariar cambios repuestos en la motocicleta al entregarla.</li>
+     <pre>
+         <code>
+            Proceso Taller_Motos
+	
+	Definir NombreCliente, PlacaMoto, DetallesMotocicleta, Repuestos, Novedades Como Caracter;
+	Definir OpcionServicio Como Entero;
+	Definir GuardarCambio Como Logico;
+	
+	Escribir "Bienvenido al Taller de Motos el Maquinista";
+	
+	Escribir "¿Que servicio desea?";
+	Escribir "1. Registrar ingreso de Motocicleta";
+	Escribir "2. Registrar salida de Motocicleta";
+	Leer OpcionServicio;
+	
+	Limpiar Pantalla;
+	
+	Segun OpcionServicio Hacer
+		1:
+			Escribir "Ingrese nombre completo"; 
+			Leer NombreCliente;
+			
+			Escribir "Ingrese Numero de placa de Motocicleta";
+			Leer PlacaMoto;
+			
+			Escribir "Ingrese Brevemente los detalles por los cuales trae la Motocicleta";
+			Leer DetallesMotocicleta;
+			
+			Escribir "Registro del Cliente ", NombreCliente, " de motocicleta con placas ", PlacaMoto;
+			Escribir "Presenta las siguentes observaciones:";
+			Escribir DetallesMotocicleta;
+			
+		2:
+			Escribir "Ingrese nombre completo"; 
+			Leer NombreCliente;
+			
+			Escribir "Ingrese Numero de placa de Motocicleta";
+			Leer PlacaMoto;
+			
+			Escribir "Repuestos cambiados";
+			Leer Repuestos;
+			
+			Escribir "Detalle Brevemente las novedades encontradas en la reparacion de la Motocicleta";
+			Leer Novedades;
+			
+			Escribir "La Motocicleta con placas ", PlacaMoto, " se le realizo el cambio de ", Repuestos, 
+                        "por lo siguente ", Novedades;
+			Escribir "Desea inventarian los repuestos cambiados en la Motocicleta";
+			Leer GuardarCambio;
+			
+			Si GuardarCambio = Verdadero Entonces
+				
+				Escribir "Los respuestos fueron guardados correctamente en inventario";
+				
+			SiNo
+				Escribir "_Tenga Feliz Dia";
+			FinSi
+		De Otro Modo:
+			Escribir "Ingrese una opcion valida";
+	FinSegun
+FinProceso
+     
+         </code>
+     </pre>
+
+     <li>
+        La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de masa corporal) y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada adicional a los datos suministrados, debe mostrar el resultado para cada uno y establecer en qué rango se encuentra (bajo peso, normal, sobrepeso y obeso).
+     </li>
+     <pre>
+         <code>
+            Proceso Pasteleria
+	
+            Definir NombreCliente Como Caracter;
+            Definir OpcionTorta, OpcionDecoracion, Cantidad, Torta1, Torta2, Torta3 Como Entero;
+            Definir Decoracion Como Logico;
+            Definir DecoracionGrajeas, DecoracionSalsa, ValorTorta Como Real;
+            
+            Escribir "Bienvenido a la Pasterleria de Don carlos";
+            
+            Escribir "Ingrese su nombre completo";
+            Leer NombreCliente;
+            
+            Limpiar Pantalla;
+            
+            Escribir "A continuacion mostraremos las Tortas Disponibles";
+            Escribir "1, Torta Maria Luisa - $30000";
+            Escribir "2. Torta de Nucita - $35000";
+            Escribir "3. Torta de Yogourt - $40000";
+            Leer OpcionTorta;
+            
+            Segun OpcionTorta Hacer
+                1: 
+                    Escribir "Desea alguna decoracion?";
+                    Leer Decoracion;
+                    
+                    Si Decoracion = Verdadero Entonces
+                        
+                        Escribir "Elija la Decoracion";
+                        Escribir "1, Grajeas de Colores - $5000";
+                        Escribir "2. Salsa de Frutos Rojos - $7000";
+                        Leer OpcionDecoracion;
+                        
+                        Segun  OpcionDecoracion Hacer
+                            1: 
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionGrajeas <- 5000;
+                                Torta1 <- 30000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionGrajeas);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Maria Luisa con Decoración de Grajeas de Colores";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                            2:
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionSalsa <- 7000;
+                                Torta1 <- 30000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Maria Luisa con Decoración de Salsas de Frutos Rojos";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                            De Otro Modo:
+                                
+                                Escribir "Elija una opcion valida";
+                                
+                        FinSegun
+                        
+                    SiNo
+                        
+                        Escribir "Cuantas Cantidades desea?";
+                        Leer Cantidad;
+                        
+                        Torta1 <- 30000;
+                        ValorTorta <- Cantidad * Torta1;
+                        
+                        Escribir "El pedido de ", NombreCliente, " es:";
+                        Escribir Cantidad, " Tortas de Maria Luisa sin Decoración";
+                        Escribir  "El valor a cancelar es de: ", ValorTorta;
+                        
+                    FinSi
+                2:
+                    Escribir "Desea alguna decoracion?";
+                    Leer Decoracion;
+                    
+                    Si Decoracion = Verdadero Entonces
+                        
+                        Escribir "Elija la Decoracion";
+                        Escribir "1, Grajeas de Colores - $5000";
+                        Escribir "2. Salsa de Frutos Rojos - $7000";
+                        Leer OpcionDecoracion;
+                        
+                        Segun  OpcionDecoracion Hacer
+                            1: 
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionGrajeas <- 5000;
+                                Torta1 <- 35000;
+                                ValorTorta <- Cantidad * (Torta2 + DecoracionGrajeas);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Nucita con Decoración de Grajeas de Colores";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                            2:
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionSalsa <- 7000;
+                                Torta1 <- 35000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Nucita con Decoración de Salsas de Frutos Rojos";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                            De Otro Modo:
+                                
+                                Escribir "Elija una opcion valida";
+                                
+                        FinSegun
+                        
+                    SiNo
+                        
+                        Escribir "Cuantas Cantidades desea?";
+                        Leer Cantidad;
+                        
+                        Torta1 <- 35000;
+                        ValorTorta <- Cantidad * Torta1;
+                        
+                        
+                        Escribir "El pedido de ", NombreCliente, " es:";
+                        Escribir Cantidad, " Tortas de Nucita sin Decoración";
+                        Escribir  "El valor a cancelar es de: ", ValorTorta;
+                        
+                    FinSi
+                3:
+                    Escribir "Desea alguna decoracion?";
+                    Leer Decoracion;
+                    
+                    Si Decoracion = Verdadero Entonces
+                        
+                        Escribir "Elija la Decoracion";
+                        Escribir "1, Grajeas de Colores - $5000";
+                        Escribir "2. Salsa de Frutos Rojos - $7000";
+                        Leer OpcionDecoracion;
+                        
+                        Segun  OpcionDecoracion Hacer
+                            1: 
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionGrajeas <- 5000;
+                                Torta1 <- 40000;
+                                ValorTorta <- Cantidad * (Torta2 + DecoracionGrajeas);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Yogourt con Decoración de Grajeas de Colores";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                            2:
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionSalsa <- 7000;
+                                Torta1 <- 40000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Yogourt con Decoración de Salsas de Frutos Rojos";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                                
+                            De Otro Modo:
+                                
+                                Escribir "Elija una opcion valida";
+                                
+                        FinSegun
+                        
+                    SiNo
+                        
+                        Escribir "Cuantas Cantidades desea?";
+                        Leer Cantidad;
+                        
+                        Torta1 <- 40000;
+                        ValorTorta <- Cantidad * Torta1;
+                        
+                        Escribir "El pedido de ", NombreCliente, " es:";
+                        Escribir Cantidad, " Tortas de Yogourt sin Decoración";
+                        Escribir  "El valor a cancelar es de: ", ValorTorta;
+                        
+                        
+                    FinSi
+                    
+                De Otro Modo:
+                    
+                    Escribir "Elija una opcion valida";
+                    
+            FinSegun
+            
+        FinProceso
+               
+         </code>
+     </pre>
+
+     <li>
+        El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita registrar los pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características propias como sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los pedidos, las tortas disponibles y las ventas que se registren diariamente.
+     </li>
+     <pre>
+         <code>
+            Proceso Pasteleria
+	
+            Definir NombreCliente Como Caracter;
+            Definir OpcionTorta, OpcionDecoracion, Cantidad, Torta1, Torta2, Torta3 Como Entero;
+            Definir Decoracion Como Logico;
+            Definir DecoracionGrajeas, DecoracionSalsa, ValorTorta Como Real;
+            
+            Escribir "Bienvenido a la Pasterleria de Don carlos";
+            
+            Escribir "Ingrese su nombre completo";
+            Leer NombreCliente;
+            
+            Limpiar Pantalla;
+            
+            Escribir "A continuacion mostraremos las Tortas Disponibles";
+            Escribir "1, Torta Maria Luisa - $30000";
+            Escribir "2. Torta de Nucita - $35000";
+            Escribir "3. Torta de Yogourt - $40000";
+            Leer OpcionTorta;
+            
+            Segun OpcionTorta Hacer
+                1: 
+                    Escribir "Desea alguna decoracion?";
+                    Leer Decoracion;
+                    
+                    Si Decoracion = Verdadero Entonces
+                        
+                        Escribir "Elija la Decoracion";
+                        Escribir "1, Grajeas de Colores - $5000";
+                        Escribir "2. Salsa de Frutos Rojos - $7000";
+                        Leer OpcionDecoracion;
+                        
+                        Segun  OpcionDecoracion Hacer
+                            1: 
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionGrajeas <- 5000;
+                                Torta1 <- 30000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionGrajeas);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Maria Luisa con Decoración de Grajeas de Colores";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                            2:
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionSalsa <- 7000;
+                                Torta1 <- 30000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Maria Luisa con Decoración de Salsas de Frutos Rojos";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                            De Otro Modo:
+                                
+                                Escribir "Elija una opcion valida";
+                                
+                        FinSegun
+                        
+                    SiNo
+                        
+                        Escribir "Cuantas Cantidades desea?";
+                        Leer Cantidad;
+                        
+                        Torta1 <- 30000;
+                        ValorTorta <- Cantidad * Torta1;
+                        
+                        Escribir "El pedido de ", NombreCliente, " es:";
+                        Escribir Cantidad, " Tortas de Maria Luisa sin Decoración";
+                        Escribir  "El valor a cancelar es de: ", ValorTorta;
+                        
+                    FinSi
+                2:
+                    Escribir "Desea alguna decoracion?";
+                    Leer Decoracion;
+                    
+                    Si Decoracion = Verdadero Entonces
+                        
+                        Escribir "Elija la Decoracion";
+                        Escribir "1, Grajeas de Colores - $5000";
+                        Escribir "2. Salsa de Frutos Rojos - $7000";
+                        Leer OpcionDecoracion;
+                        
+                        Segun  OpcionDecoracion Hacer
+                            1: 
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionGrajeas <- 5000;
+                                Torta1 <- 35000;
+                                ValorTorta <- Cantidad * (Torta2 + DecoracionGrajeas);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Nucita con Decoración de Grajeas de Colores";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                            2:
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionSalsa <- 7000;
+                                Torta1 <- 35000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Nucita con Decoración de Salsas de Frutos Rojos";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                            De Otro Modo:
+                                
+                                Escribir "Elija una opcion valida";
+                                
+                        FinSegun
+                        
+                    SiNo
+                        
+                        Escribir "Cuantas Cantidades desea?";
+                        Leer Cantidad;
+                        
+                        Torta1 <- 35000;
+                        ValorTorta <- Cantidad * Torta1;
+                        
+                        
+                        Escribir "El pedido de ", NombreCliente, " es:";
+                        Escribir Cantidad, " Tortas de Nucita sin Decoración";
+                        Escribir  "El valor a cancelar es de: ", ValorTorta;
+                        
+                    FinSi
+                3:
+                    Escribir "Desea alguna decoracion?";
+                    Leer Decoracion;
+                    
+                    Si Decoracion = Verdadero Entonces
+                        
+                        Escribir "Elija la Decoracion";
+                        Escribir "1, Grajeas de Colores - $5000";
+                        Escribir "2. Salsa de Frutos Rojos - $7000";
+                        Leer OpcionDecoracion;
+                        
+                        Segun  OpcionDecoracion Hacer
+                            1: 
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionGrajeas <- 5000;
+                                Torta1 <- 40000;
+                                ValorTorta <- Cantidad * (Torta2 + DecoracionGrajeas);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Yogourt con Decoración de Grajeas de Colores";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                            2:
+                                Escribir "Cuantas Cantidades desea?";
+                                Leer Cantidad;
+                                
+                                DecoracionSalsa <- 7000;
+                                Torta1 <- 40000;
+                                ValorTorta <- Cantidad * (Torta1 + DecoracionSalsa);
+                                
+                                Escribir "El pedido de ", NombreCliente, " es:";
+                                Escribir Cantidad, " Tortas de Yogourt con Decoración de Salsas de Frutos Rojos";
+                                Escribir  "El valor a cancelar es de: ", ValorTorta;
+                                
+                                
+                            De Otro Modo:
+                                
+                                Escribir "Elija una opcion valida";
+                                
+                        FinSegun
+                        
+                    SiNo
+                        
+                        Escribir "Cuantas Cantidades desea?";
+                        Leer Cantidad;
+                        
+                        Torta1 <- 40000;
+                        ValorTorta <- Cantidad * Torta1;
+                        
+                        Escribir "El pedido de ", NombreCliente, " es:";
+                        Escribir Cantidad, " Tortas de Yogourt sin Decoración";
+                        Escribir  "El valor a cancelar es de: ", ValorTorta;
+                        
+                        
+                    FinSi
+                    
+                De Otro Modo:
+                    
+                    Escribir "Elija una opcion valida";
+                    
+            FinSegun
+            
+        FinProceso
+        
+         </code>
+     </pre>
+
+     <li>
+        El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de diferentes figuras geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los valores al estudiante. La aplicación debe permitir que el estudiante seleccione si desea calcular el área de un rectángulo, triángulo o trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y mostrar su respectivo resultado.
+     </li>
+     <pre>
+         <code>
+            Leer Area;
+	
+            Limpiar Pantalla;
+            
+            Segun Area Hacer	
+                1:
+                    Escribir "El area de un Rectangulo es igual a :";
+                    Escribir "Base * Altura";
+                    
+                    Escribir "Ingrese la base";
+                    Leer Base1;
+                    
+                    Escribir "Ingrese la Altura";
+                    Leer Altura;
+                    
+                    ValorArea <- Base1 * Altura;
+                    
+                    Escribir "El area del Rectangulo es de: ", ValorArea;
+                    
+                2:
+                    Escribir "El area de un Triangulo es igual a :";
+                    Escribir "(Base * Altura) / 2";
+                    
+                    Escribir "Ingrese la base";
+                    Leer Base1;
+                    
+                    Escribir "Ingrese la Altura";
+                    Leer Altura;
+                    
+                    ValorArea <- (Base1 * Altura) / 2;
+                    
+                    Escribir "El area del Triangulo es de: ", ValorArea;
+                    
+                3:
+                    Escribir "El area de un Trapecio es igual a :";
+                    Escribir "((Base 1 + Base 2) * Altura) / 2";
+                    
+                    Escribir "Ingrese primera base";
+                    Leer Base1;
+                    
+                    Escribir "Ingrese segunda base";
+                    Leer Base2;
+                    
+                    Escribir "Ingrese la Altura";
+                    Leer Altura;
+                    
+                    ValorArea <- ((Base1 + Base2) * Altura ) / 2;
+                    
+                    Escribir "El area del Trapecio es de: ", ValorArea;
+                    
+                De Otro Modo:
+                    
+                    Escribir "Elija una opcion valida";
+                    
+            FinSegun
+            
+        FinProceso  
+         </code>
+     </pre>
+     <li>
+        El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para llevar las cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y cantidad. Para cada cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los ingresos no se pueden insertar valores negativos y para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.
+    </li>
+     <pre>
+         <code>
+            Proceso Banco
+	
+	Definir NombreCompelto Como Caracter;
+	Definir NumeroCuenta, Opcion Como Entero;
+	Definir SaldoActual, ValorIngreso, ValorTotal Como Real;
+	Definir ImprimirRecibo Como Logico;
+	
+	SaldoActual <- 500000;
+	
+	Escribir "Bienvenido a Su banco Fiel";
+	Escribir "Ingrese su nombre completo";
+	Leer NombreCompelto;
+	Escribir "Digite numero de cuenta";
+	Leer NumeroCuenta;
+	
+	Limpiar Pantalla;
+	
+	Escribir "A continuacion elija una opcion";
+	Escribir "1. Ingreso";
+	Escribir "2. Retiro";
+	Escribir "3. Consultas";
+	Leer Opcion; 
+	
+	Limpiar Pantalla;
+	
+	Segun Opcion Hacer
+		1:
+			
+			Escribir "USUARIO: ", NombreCompelto, " NUMERO DE CUENTA: ", NumeroCuenta;
+			Escribir "Su saldo actual es de: ", SaldoActual;
+			Escribir "Cuanto dinero va a ingresar en la cuenta ";
+			Leer ValorIngreso;
+			
+			ValorTotal <- SaldoActual + ValorIngreso;
+			
+			Escribir "Su nuevo saldo es de: ", ValorTotal;
+			Escribir "Desea imprimir recibo?";
+			Leer ImprimirRecibo;
+			
+			Limpiar Pantalla;
+			
+			Si ImprimirRecibo = Verdadero Entonces
+				
+				Escribir "Imprimiendo Recibo....";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			SiNo
+				
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			FinSi
+		2:
+			Escribir "USUARIO: ", NombreCompelto, " NUMERO DE CUENTA: ", NumeroCuenta;
+			Escribir "Su saldo actual es de: ", SaldoActual;
+			Escribir "Cuanto dinero va a retirar en la cuenta ";
+			Leer ValorIngreso;
+			
+			ValorTotal <- SaldoActual - ValorIngreso;
+			
+			Escribir "Su nuevo saldo es de: ", ValorTotal;
+			Escribir "Desea imprimir recibo?";
+			Leer ImprimirRecibo;
+			
+			Limpiar Pantalla;
+			
+			Si ImprimirRecibo = Verdadero Entonces
+				
+				Escribir "Imprimiendo Recibo....";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			SiNo
+				
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			FinSi
+		3:
+			Escribir "USUARIO: ", NombreCompelto, " NUMERO DE CUENTA: ", NumeroCuenta;
+			Escribir "Su saldo actual es de: ", SaldoActual;
+			
+			Escribir "Desea imprimir recibo?";
+			Leer ImprimirRecibo;
+			
+			Limpiar Pantalla;
+			
+			Si ImprimirRecibo = Verdadero Entonces
+				
+				Escribir "Imprimiendo Recibo....";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir ".";
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			SiNo
+				
+				Escribir "Muchas Gracias, Hasta Luego";
+				
+			FinSi
+			
+	FinSegun
+	
+FinProceso
+     
+         </code>
+     </pre>
+
+
+ </ol>
+ <div class="video">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/DTjnnwj_vSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</body>
+</html>

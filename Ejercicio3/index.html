@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hoja de vida</title>
+  <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+  <script async src="index.js"></script>
+
+</head>
+
+<body id="body">
+  <div class="bloqueGeneral">
+    <header>
+      <a id="index" href="index.html">
+        <butt>
+          Inicio
+        </butt>
+      </a>
+
+      <select id="seleccionarTema" onchange='cambiar()'>
+        <option value="light">Light</option>
+        <option value="blue">Blue</option>
+        <option value="space">Space</option>
+      </select>
+
+      <a id="ejercicios" href="/ejercicios.html">
+        <butt>
+          Ejercicios
+        </butt>
+      </a>
+    </header>
+
+    <main>
+      <div class="bloque1">
+        <h1>Hoja de vida</h1>
+
+        <button class="btnImg">
+          <img class="block" src="assets/images/imagen.png" height="200" />
+        </button>
+      </div>
+
+      <div class="divMenu">
+        <a href="informacion.html">
+          <button class="btn">
+            <h2>Informacion Principal</h2>
+          </button>
+        </a>
+
+        <a href="experienciaLaboral.html">
+          <button class="btn">
+            <h2>Experiencia Laboral</h2>
+          </button>
+        </a>
+        <a href="referenciasPersonales.html">
+          <button class="btn">
+            <h2>Referencias Personales</h2>
+          </button>
+        </a>
+
+        <a href="referenciasFamiliares.html">
+          <button class="btn">
+            <h2>Referencias Familiares</h2>
+          </button>
+        </a>
+
+        <a href="estudios.html">
+          <button class="btn">
+            <h2>Estudios Realizados</h2>
+          </button>
+        </a>
+      </div>
+
+      <div class="divPerfil">
+        <h2 id="perfil">Perfil Profesional</h2>
+
+        <p>Ingeniero de sistemas, cuento con diversas capacidades que me facultan para
+          desarrollar tareas asignadas con supervisión mínima, igualmente cuento con
+          una excelente actitud para realizar trabajos en equipo; con espíritu
+          emprendedor, formado integralmente con valores sociales, humanos y morales;
+          aprendo con rapidez y me intereso por cumplir de manera adecuada con la
+          puntualidad, honestidad y responsabilidad en las distintas actividades que
+          realizo.</p>
+      </div>
+      <div id="descargar">
+        <a href="/assets/archivo/archivo.pdf" download>
+          <button style="margin-left: 60px;" class="btn">
+            <h2>Descargar Hoja De vida</h2>
+          </button>
+        </a>
+      </div>
+    </main>
+  </div>
+
+</body>
+
+</html>

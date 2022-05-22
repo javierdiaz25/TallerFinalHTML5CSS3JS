@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+    <script async src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bloqueGeneral">
+    <header>
+        <a id="index" href="index.html">
+          <butt>
+            Inicio
+          </butt>
+        </a>
+  
+        <select id="seleccionarTema" onchange='cambiar()'>
+          <option value="light">Light</option>
+          <option value="blue">Blue</option>
+          <option value="space">Space</option>
+        </select>
+        <a id="ejercicios" href="/ejercicios.html">
+            <butt>
+              Ejercicios
+            </butt>
+        </a>
+      </header>
+  <h1 class="tituloTaller">Taller de Java - Variables e impresión </h1>
+  <p>
+    A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en Java.
+  </p>
+ <ol>
+     <li>
+        Realizar un programa el cual solicite su nombre y apellidos.
+     </li>
+     <pre>
+         <code>
+            package variables;
+
+            import java.util.Scanner;
+            
+            /**
+             * @author Javier Diaz <javier.ingsistema@gmail.com>
+             */
+            
+            public class Nombre {
+                private static String nombre, apellido;
+            
+                public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+            
+                    System.out.println("Ingrese su nombre ");
+                    nombre = input.nextLine();
+                    System.out.println("Ingrese su apellido ");
+                    apellido = input.nextLine();
+            
+                    imprimirResultado();
+            
+                }
+            
+                private static void imprimirResultado(){
+                    System.out.println("Usted se llama " + nombre + " " + apellido);
+            
+                }
+            
+            }
+         </code>
+     </pre>
+
+     <li>
+        Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.
+     </li>
+     <pre>
+         <code>
+            package variables;
+
+import java.util.Scanner;
+
+/**
+ * @author Javier Diaz <javier.ingsistema@gmail.com>
+ */
+public class NombreEdad {
+        private static String nombre, apellido;
+        private static Integer edad;
+        private static Double estatura;
+
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+
+            System.out.println("Ingrese su nombre ");
+            nombre = input.nextLine();
+
+            System.out.println("Ingrese su apellido ");
+            apellido = input.nextLine();
+
+            System.out.println("Ingrese su edad ");
+            edad = input.nextInt();
+
+            System.out.println("Ingrese su estatura ");
+            estatura = input.nextDouble();
+
+            imprimirResultado();
+
+        }
+
+        private static void imprimirResultado(){
+            System.out.println("Usted se llama " + nombre + " " + apellido + 
+            " su edad es " + edad + " y su estatura es " + estatura);
+
+        }
+
+    }
+
+         </code>
+    </pre>
+
+    <li>
+        Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos de su padre y madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo de [Nombre de la Madre] y [Nombre del Padre].
+     </li>
+     <pre>
+         <code>
+            package variables;
+
+            import java.util.Scanner;
+            
+            /**
+             * @author Javier Diaz <javier.ingsistema@gmail.com>
+             */
+            
+            public class NombresFamilia {
+            
+                private static String nombre, apellidos, nombrePadre, apellidoPadre, nombreMadre, apellidoMadre;
+            
+                public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+            
+                    System.out.println("Escriba su nombre");
+                    nombre = input.nextLine();
+            
+                    System.out.println("Escriba su apellido");
+                    apellidos = input.nextLine();
+            
+                    System.out.println("Escriba nombre del padre");
+                    nombrePadre = input.nextLine();
+            
+                    System.out.println("Escriba apellido del padre");
+                    apellidoPadre = input.nextLine();
+            
+                    System.out.println("Escriba nombre de la madre");
+                    nombreMadre = input.nextLine();
+            
+                    System.out.println("Escriba apellido de la madre");
+                    apellidoMadre = input.nextLine();
+            
+                    imprimirNombres();
+            
+                }
+            
+                private static void imprimirNombres(){
+                    System.out.println("Yo " + nombre + " " + apellidos + ", soy hijo de " + nombreMadre+ 
+                    " " + apellidoMadre + " y " + nombrePadre + " " + apellidoPadre);
+                }
+            }
+            
+
+         </code>
+    </pre>
+
+    <li>
+        Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe imprimir en pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del País]
+     </li>
+     <pre>
+         <code>
+            package variables;
+
+import java.util.Scanner;
+
+/**
+ * @author Javier Diaz <javier.ingsistema@gmail.com>
+ */
+
+public class CiudadCapital {
+
+    private static String nombreCiudad, nombreCapital;
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Escriba nombre de la ciudad capital");
+        nombreCiudad = input.nextLine();
+
+        System.out.println("Escriba nombre del pais");
+        nombreCapital = input.nextLine();
+
+         imprimirCiudad();
+    }
+
+    private static void imprimirCiudad(){
+        System.out.println("La ciudad " + nombreCiudad + ", es la capital del pais " + nombreCapital);
+    }
+}
+
+        
+         </code>
+    </pre>
+
+    <li>
+        Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y su nombre completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de Mascota] es un(a) [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es actualmente su dueño(a).
+     </li>
+     <pre>
+         <code>
+            package variables;
+
+            import java.util.Scanner;
+            
+            /**
+             * @author Javier Diaz <javier.ingsistema@gmail.com>
+             */
+            
+            public class Mascota {
+            
+                private static String nombreMascota, tipoMascota, nombrePersona;
+                private static Integer edadMascota;
+            
+                public static void main(String[] args) {
+                    Scanner input = new Scanner(System.in);
+            
+                    System.out.println("Ingrese nombre de la mascota");
+                    nombreMascota = input.nextLine();
+            
+                    System.out.println("Ingrese tipo de mascota");
+                    tipoMascota = input.nextLine();
+            
+                    System.out.println("Ingrese su nombre completo");
+                    nombrePersona = input.nextLine();
+            
+                    System.out.println("Ingrese edad de la mascota");
+                    edadMascota = input.nextInt();
+            
+            
+                    imprimirMensaje();
+            
+                }
+            
+                private static void imprimirMensaje(){
+                    System.out.println(nombreMascota + " es un(a) " + tipoMascota + ", el cual, tiene " + edadMascota + 
+                    "años de edad y " + nombrePersona + " es su actual dueño(a)");
+                }
+            }
+            
+            
+         </code>
+    </pre>
+ </ol>
+</div>
+</body>
+</html>
