@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Formulario de contacto</title>
+  <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+  <script async src="index.js"></script>
+</head>
+
+  <body>
+     
+    <form action="" class="formulario"  name="formulario" method="get" >
+      <div id="papaFormulario">
+      <h1>Formulario Contactenos</h1>
+      <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+      <br>  
+      <input type="text" name="email" id="email" placeholder="Email">
+      <br>
+      <input type="text" name="asunto" id="asunto" placeholder="Asunto">
+      <br>
+      <textarea name="mensaje" id="mensaje" rows="10" cols="50" placeholder="Mensaje"></textarea>
+      <br>
+      <div id="papaBotones">
+        <button type="submit" class="btnHijos" id="btnEnviar"  value="Enviar" onclick="validacionFormulario()">Enviar</button>
+        <input type="reset" class="btnHijos" id="btnBorrar" name="btnBorrar" value="borrar" onclick="limpiar()">
+      </div>
+    </div> 
+    </form>
+     
+  </body>
+
+</html>
