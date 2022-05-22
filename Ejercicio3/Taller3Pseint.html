@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+    <script async src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bloqueGeneral">
+    <header>
+        <a id="index" href="index.html">
+          <butt>
+            Inicio
+          </butt>
+        </a>
+  
+        <select id="seleccionarTema" onchange='cambiar()'>
+          <option value="light">Light</option>
+          <option value="blue">Blue</option>
+          <option value="space">Space</option>
+        </select>
+  
+        <a id="ejercicios" href="/ejercicios.html">
+            <butt>
+              Ejercicios
+            </butt>
+          </a>
+      </header>
+  <h1 class="tituloTaller">Taller de Ciclos</h1>
+  <p>
+    A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil Estricto.     
+</p>
+ <ol>
+     <li>
+        Realizar la siguiente figura por medio del ciclo Para
+      </li>
+     <pre>
+         <code>
+            Proceso Ciclo_Para
+	
+	Definir Ciclo1, Ciclo2 Como Entero;
+	
+	Para Ciclo1 <- 1 Hasta 10 Con Paso 1 Hacer
+		
+		para Ciclo2 <- 1 Hasta Ciclo1 con paso 1 Hacer
+			
+			Escribir "*" Sin Saltar;
+			
+		FinPara
+		
+		Escribir "";
+		
+	FinPara
+FinProceso       
+         </code>
+     </pre>
+
+     <li>
+        Realizar la siguiente figura por medio del ciclo Mientras - Hacer.
+    </li>
+     <pre>
+         <code>
+            Proceso Ciclo_Mientras
+	
+            Definir i, j Como Entero;
+            
+            i <- 1;
+            
+            Mientras i <= 10 Hacer
+                j<-10;
+                Mientras j >= i Hacer
+                    Escribir " " sin saltar;
+                    j<-j-1;
+                FinMientras
+                
+                j<-1;
+                
+                Mientras j <= i Hacer
+                    Escribir "*" sin saltar;
+                    j<-j+1;
+                FinMientras
+                
+                Escribir "";
+                i <- i + 1;
+            FinMientras
+            
+        FinProceso
+        
+         </code>
+    </pre>
+
+    <li>
+        Realizar la siguiente figura por medio del ciclo Repetir - Hasta Que  
+    </li>
+     <pre>
+         <code>
+            Proceso Ciclo_Hasta	
+	
+            Definir i, j, k, l Como Entero;
+            
+            i<-1;
+            k<-0;
+            l<-0;
+            
+            Repetir
+                j<-i;
+                Repetir
+                    Escribir " " Sin Saltar;
+                    j <- j+1;
+                Hasta Que j>11;
+                
+                Repetir
+                    Escribir "*" Sin Saltar;
+                    k<-k+1;
+                Hasta Que k>(2*l);
+                
+                Escribir "";
+                i<-i+1;
+                k<-0;
+                l<-l+1;
+                
+            Hasta Que i>11;
+            
+            Repetir
+                k<-0;
+                l<-1;
+                j<-0;
+                Repetir
+                    Escribir " " Sin Saltar;
+                    j<-j+1;
+                Hasta Que j>9;
+                
+                Repetir
+                    Escribir "*" Sin Saltar;
+                    k<-k+1;
+                Hasta Que k>(2*l);
+                
+                Escribir "";
+                i<-i+1;
+                j<-0;
+            Hasta Que i>13;
+            
+            Repetir
+                k<-0;
+                j<-0;
+                
+                Repetir
+                    Escribir " " Sin Saltar;
+                    j<-j+1;
+                Hasta Que j>(i-6);
+                
+                Repetir
+                    Escribir "*" Sin Saltar;
+                    k<-k+1;
+                Hasta Que k>(2*l)+2;
+                
+                Escribir "";
+                i<-i+1;
+            Hasta Que i>14;
+            
+            Repetir
+                k<-0;
+                l<-2;
+                j<-0;
+                
+                Repetir
+                    Escribir " " Sin Saltar;
+                    j<-j+1;
+                Hasta Que j>(i-8);
+                
+                Repetir
+                    Escribir "*" Sin Saltar;
+                    k<-k+1;
+                Hasta Que k>(2*l)+2;
+                
+                Escribir "";
+                i<-i+1;
+            Hasta Que i>15;
+            
+        FinProceso
+        
+         </code>
+    </pre>
+
+    <li>
+        Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por medio del ciclo Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear la tabla del 5, entonces el resultado debería ser el siguiente:
+    </li>
+     <pre>
+         <code>
+            Proceso Tabla_Multiplicar
+	
+            Definir num, i, Resul Como Entero;
+            
+            Escribir "Ingrese el numero del cual desea ver la tabla";
+            Leer num;
+            
+            Para i <- 1 Hasta 10 Con Paso 1 Hacer
+                
+                Resul	<- i * num;
+                Escribir i, " x ", num, " = ", Resul; 
+                
+            FinPara
+            
+        FinProceso
+         </code>
+    </pre>
+
+    <li>
+        Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee terminar dicho ciclo.
+    </li>
+     <pre>
+         <code>
+            Proceso Menu_Infinito
+	
+            Definir Opcion Como Entero;
+            Definir Nombre Como Caracter;
+            
+            Opcion <- 1;
+            
+            Mientras Opcion <= 2 Hacer
+                
+                
+                
+                Escribir "Menu de usuario";
+                Escribir "1. Capturar Nombre";
+                Escribir "2. Saludar persona";
+                Escribir "3. Salir del sistema";
+                Leer Opcion;
+                
+                
+                Segun Opcion Hacer
+                    1:
+                        Escribir "Ingrese su nombre";
+                        Leer Nombre;
+                        Escribir Nombre, " su nombre ha sido guardado correctamente";
+                        
+                        
+                    2:
+                        Escribir "Ingrese su Nombre";
+                        Leer Nombre;
+                        Escribir "Hola ", Nombre;
+                        
+                FinSegun
+                
+            FinMientras
+                
+        FinProceso
+         </code>
+    </pre>
+
+    <li>
+        Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo indique.
+    </li>
+     <pre>
+         <code>
+            Proceso Contactos_Telefonicos
+	
+            Definir NombreCompleto1, NombreCompleto2, NombreCompleto3, Organizacion1, Organizacion2, Organizacion3 Como Caracter;
+            Definir NumeroCel1, NumeroCel2, NumeroCel3, NumeroEliminar, Opcion, i, usuarioPermitido, OpcionEliminar Como Entero;
+            Definir Respuesta Como Logico;
+            
+            Opcion <- 1;
+            usuarioPermitido <- 3;
+            NombreCompleto1 <- "";
+            NombreCompleto2 <- "";
+            NombreCompleto3 <- "";
+            Organizacion1 <- "";
+            Organizacion2 <- "";
+            Organizacion3 <- "";
+            NumeroCel1 <- 0;
+            NumeroCel2 <- 0;
+            NumeroCel3 <- 0;
+                
+            Mientras Opcion <= 3 Hacer
+                
+                Escribir "Bienvenido, A continuacion elija una opcion";
+                
+                Escribir "1. Crear contacto";
+                Escribir "2. Ver contactos registrados";
+                Escribir "3. Eliminar Contactos";
+                Escribir "4. Salir";
+                Leer Opcion;
+                
+                Segun Opcion Hacer
+                    1: 
+                        Para i <- 1 hasta usuarioPermitido con paso 1 Hacer
+                            
+                            Escribir "usuarios permitidos: ", usuarioPermitido;
+                            
+                            Si i = 1 Y NumeroCel1 = 0 Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto1;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel1;
+                                
+                                Mientras NumeroCel1 = NumeroCel2 O NumeroCel1 = NumeroCel3  Hacer
+                                    
+                                    Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+                                    Leer NumeroCel1;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese Organizacion";
+                                Leer Organizacion1;
+                                
+                                Escribir "Contacto ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea crear otro contacto";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 4;
+                                    
+                                FinSi
+                                
+                                
+                            FinSi
+                            
+                            Si i=2 Y NumeroCel2 = 0 Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto2;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel2;
+                                    
+                                    Mientras NumeroCel1 = NumeroCel2 O NumeroCel2 = NumeroCel3  Hacer
+                                        
+                                        Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+                                        Leer NumeroCel2;
+                                        
+                                    FinMientras
+                                    
+                                Escribir "Ingrese Organizacion";
+                                Leer Organizacion2;
+                                
+                                Escribir "Contacto ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                Escribir "Desea crear otro contacto";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 4;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i=3 Y NumeroCel3 = 0 Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto3;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel3;
+                                
+                                Mientras NumeroCel1 = NumeroCel3 O NumeroCel2 = NumeroCel3  Hacer
+                                    
+                                    Escribir "El Numero ya esta guardado por favor ingrese otro numero";
+                                    Leer NumeroCel3;
+                                    
+                                FinMientras					
+                                
+                                Escribir "Ingrese Organizacion";
+                                Leer Organizacion3;
+                                
+                                Escribir "Contacto ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                            FinSi
+                            
+                            
+                            Limpiar Pantalla;					
+                            
+                        FinPara
+                            
+                        2:
+                            
+                            Escribir "Los contactos registrados son los siguientes";
+                            Escribir "";
+                            Escribir "usuario 1";
+                            Escribir "NOMBRE: ", NombreCompleto1;
+                            Escribir "NUMERO TELEFONICO: ", NumeroCel1;
+                            Escribir "ORGANIZACION: ", Organizacion1;
+                            Escribir "";
+                            Escribir "usuario 2";
+                            Escribir "NOMBRE: ", NombreCompleto2;
+                            Escribir "NUMERO TELEFONICO: ", NumeroCel2;
+                            Escribir "ORGANIZACION: ", Organizacion2;
+                            Escribir "";
+                            Escribir "usuario 3";
+                            Escribir "NOMBRE: ", NombreCompleto3;
+                            Escribir "NUMERO TELEFONICO: ", NumeroCel3;
+                            Escribir "ORGANIZACION: ", Organizacion3;
+                            Escribir "";
+                            
+                        3:
+                            Escribir "Por favor ingrese el numero telefonico a eliminar";
+                            Leer NumeroEliminar;
+                            
+                            Si NumeroEliminar <> NumeroCel1 y NumeroEliminar <> NumeroCel2 y NumeroEliminar <> NumeroCel3 Entonces
+                                
+                                Repetir
+                                    Escribir "Este Numero no existe, por favor ingrese otro numero";
+                                    Leer NumeroEliminar;
+                                    
+                                Hasta Que NumeroEliminar = NumeroCel1 o NumeroEliminar = NumeroCel2 o NumeroEliminar = NumeroCel3
+                            FinSi
+                            
+                            Si NumeroEliminar = NumeroCel1 Entonces
+                                
+                                Escribir "El contacto ha sido eliminado correctamente";
+                                Escribir "";
+                                Escribir "usuario 1";
+                                Escribir "NOMBRE: ", NombreCompleto1;
+                                Escribir "NUMERO TELEFONICO: ", NumeroCel1;
+                                Escribir "ORGANIZACION: ", Organizacion1;
+                                
+                                NumeroCel1 <- 0;
+                                NombreCompleto1 <- "";
+                                Organizacion1 <- "";
+                                usuarioPermitido <- usuarioPermitido + 1;
+                                
+                            FinSi
+                            
+                            Si NumeroEliminar = NumeroCel2 Entonces
+                                
+                                Escribir "El contacto ha sido eliminado correctamente";
+                                Escribir "";
+                                Escribir "usuario 2";
+                                Escribir "NOMBRE: ", NombreCompleto2;
+                                Escribir "NUMERO TELEFONICO: ", NumeroCel2;
+                                Escribir "ORGANIZACION: ", Organizacion2;
+                                
+                                NumeroCel2 <- 0;
+                                NombreCompleto2 <- "";
+                                Organizacion2 <- "";
+                                usuarioPermitido <- usuarioPermitido + 1;
+                                
+                            FinSi
+                            
+                            Si NumeroEliminar = NumeroCel3 Entonces
+                                
+                                Escribir "El contacto ha sido eliminado correctamente";
+                                Escribir "";
+                                Escribir "usuario 3";
+                                Escribir "NOMBRE: ", NombreCompleto3;
+                                Escribir "NUMERO TELEFONICO: ", NumeroCel3;
+                                Escribir "ORGANIZACION: ", Organizacion3;
+                                
+                                NumeroCel3 <- 0;
+                                NombreCompleto3 <- "";
+                                Organizacion3 <- "";
+                                usuarioPermitido <- usuarioPermitido + 1;
+                                
+                            FinSi
+                            
+                    FinSegun
+                    
+                Escribir "";
+                
+            FinMientras
+                
+        FinProceso
+        
+         </code>
+    </pre>
+
+    <li>
+        El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos. 
+    </li>
+     <pre>
+         <code>
+            Proceso Parqueadero
+	
+            Definir NombreCompleto1, NombreCompleto2, NombreCompleto3, NombreCompleto4, NombreCompleto5, 
+                    placa1, placa2, placa3, placa4, placa5, marca1, marca2, marca3, marca4, marca5, consultaPlaca Como Caracter;
+            Definir NumeroCel1, NumeroCel2, NumeroCel3, NumeroCel4, NumeroCel5, NumeroEliminar, Opcion, i, 
+                    usuarioPermitido, OpcionEliminar Como Entero;
+            Definir Respuesta Como Logico;
+            
+            Opcion <- 1;
+            usuarioPermitido <- 5;
+            NombreCompleto1 <- "";
+            NombreCompleto2 <- "";
+            NombreCompleto3 <- "";
+            NombreCompleto4 <- "";
+            NombreCompleto5 <- "";
+            placa1 <- "";
+            placa2 <- "";
+            placa3 <- "";
+            placa4 <- "";
+            placa5 <- "";
+            marca1 <- "";
+            marca2 <- "";
+            marca3 <- "";
+            marca4 <- "";
+            marca5 <- "";
+            consultaPlaca <- "";
+            NumeroCel1 <- 0;
+            NumeroCel2 <- 0;
+            NumeroCel3 <- 0;
+            NumeroCel4 <- 0;
+            NumeroCel5 <- 0;
+            
+            Mientras Opcion <= 3 Hacer
+                
+                Escribir "";
+                Escribir "Bienvenido, A continuacion elija una opcion";
+                
+                Escribir "1. Ingresar Vehiculo";
+                Escribir "2. Consultar Vehiculo";
+                Escribir "3. Retirar Vehiculo";
+                Escribir "4. Salir";
+                Leer Opcion;
+                
+                Segun Opcion Hacer
+                    1:
+                        Para i <- 1 hasta usuarioPermitido Hacer
+                            
+                            Escribir "Usuarios disponibles ", usuarioPermitido;
+                            
+                            Si i = 1 Y placa1 = "" Entonces
+                                
+                                Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+                                Leer placa1;
+                                
+                                Mientras placa1 = placa2 O placa1 = placa3 o placa1 = placa4 o placa1 = placa5  Hacer
+                                    
+                                    Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+                                    Leer placa1;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese marca del vehiculo";
+                                Leer marca1;
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto1;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel1;
+                                
+                                Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea ingresar otro vehiculo";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 6;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 2 y placa2 = "" Entonces
+                                
+                                Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+                                Leer placa2;
+                                
+                                Mientras placa1 = placa2 O placa2 = placa3 o placa2 = placa4 o placa2 = placa5  Hacer
+                                    
+                                    Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+                                    Leer placa2;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese marca del vehiculo";
+                                Leer marca2;
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto2;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel2;
+                                
+                                Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea ingresar otro vehiculo";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 6;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 3 y placa3 = "" Entonces
+                                
+                                Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+                                Leer placa3;
+                                
+                                Mientras placa1 = placa3 O placa2 = placa3 o placa3 = placa4 o placa3 = placa5  Hacer
+                                    
+                                    Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+                                    Leer placa3;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese marca del vehiculo";
+                                Leer marca3;
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto3;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel3;
+                                
+                                Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea ingresar otro vehiculo";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 6;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 4 y placa4 = "" Entonces
+                                
+                                Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+                                Leer placa4;
+                                
+                                Mientras placa1 = placa4 O placa4 = placa3 o placa2 = placa4 o placa4 = placa5  Hacer
+                                    
+                                    Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+                                    Leer placa4;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese marca del vehiculo";
+                                Leer marca4;
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto4;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel4;
+                                
+                                Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea ingresar otro vehiculo";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 6;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 5 y placa5 = "" Entonces
+                                
+                                Escribir "Ingrese Placa del vehiculo (Sin guion y en mayusculas)";
+                                Leer placa2;
+                                
+                                Mientras placa1 = placa5 O placa5 = placa3 o placa5 = placa4 o placa2 = placa5  Hacer
+                                    
+                                    Escribir "El Numero de placa ya esta guardado por favor ingrese otro numero";
+                                    Leer placa5;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese marca del vehiculo";
+                                Leer marca5;
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer NombreCompleto5;
+                                
+                                Escribir "Ingrese Numero Telefonico";
+                                Leer NumeroCel2;
+                                
+                                Escribir "Vehiculo ", i, " guardado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                            FinSi
+                            
+                            Si usuarioPermitido = 0 Entonces
+                                
+                                Escribir "Parqueadero lleno";
+                                
+                            FinSi
+                            
+                            Limpiar Pantalla;
+                            
+                        FinPara
+                        
+                    2:
+                        
+                        Escribir "Ingrese Placa del vehiculo a consultar (Sin guion y en mayusculas)";
+                        Leer consultaPlaca;
+                            
+                        Si consultaPlaca <> placa1 y consultaPlaca <> placa2 y consultaPlaca <> 
+                            placa3 y consultaPlaca <> placa4 y consultaPlaca <> placa5 Entonces
+                            
+                            Repetir
+                                
+                                Escribir "Este vehiculo no se encuentra en el parqueadero, 
+                                            por favor ingrese otro numero de placa";
+                                Leer consultaPlaca;
+                                
+                            Hasta Que consultaPlaca = placa1 o consultaPlaca = placa2 o 
+                                    consultaPlaca = placa3 o consultaPlaca = placa4 o consultaPlaca = placa5
+                        FinSi
+                        
+                        Si consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = 
+                                    placa3 o consultaPlaca = placa4 o consultaPlaca = placa5 Entonces
+                            
+                            Escribir  "El vehiculo se encuentra en el parqueadero";
+                            
+                        FinSi
+                        
+                    3:
+                        
+                        Escribir "Ingrese Placa del vehiculo a retirar (Sin guion y en mayusculas)";
+                        Leer consultaPlaca;
+                        
+                        Si consultaPlaca <> placa1 y consultaPlaca <> placa2 y consultaPlaca <> 
+                                    placa3 y consultaPlaca <> placa4 y consultaPlaca <> placa5 Entonces
+                            
+                            Repetir
+                                
+                                Escribir "Este vehiculo no se encuentra en el parqueadero, 
+                                            por favor ingrese otro numero de placa";
+                                Leer consultaPlaca;
+                                
+                            Hasta Que consultaPlaca = placa1 o consultaPlaca = placa2 o consultaPlaca = 
+                                        placa3 o consultaPlaca = placa4 o consultaPlaca = placa5
+                        FinSi
+                        
+                        Si consultaPlaca = placa1 Entonces
+                            
+                            Escribir "El Vehiculo ha salido del parqueadero";
+                            Escribir "";
+                            Escribir "usuario 1";
+                            Escribir "PLACA ", placa1;
+                            Escribir "NOMBRE: ", NombreCompleto1;
+                            
+                            
+                            NumeroCel1 <- 0;
+                            NombreCompleto1 <- "";
+                            placa1 <- "";
+                            marca1 <- "";
+                            usuarioPermitido <- usuarioPermitido + 1;
+                            
+                        FinSi
+                        
+                        Si consultaPlaca = placa2 Entonces
+                            
+                            Escribir "El Vehiculo ha salido del parqueadero";
+                            Escribir "";
+                            Escribir "usuario 2";
+                            Escribir "PLACA ", placa2;
+                            Escribir "NOMBRE: ", NombreCompleto2;
+                            
+                            
+                            NumeroCel2 <- 0;
+                            NombreCompleto2 <- "";
+                            placa2 <- "";
+                            marca2 <- "";
+                            usuarioPermitido <- usuarioPermitido + 1;
+                            
+                        FinSi
+                        
+                        Si consultaPlaca = placa3 Entonces
+                            
+                            Escribir "El Vehiculo ha salido del parqueadero";
+                            Escribir "";
+                            Escribir "usuario 3";
+                            Escribir "PLACA ", placa3;
+                            Escribir "NOMBRE: ", NombreCompleto3;
+                            
+                            
+                            NumeroCel3 <- 0;
+                            NombreCompleto3 <- "";
+                            placa3 <- "";
+                            marca3 <- "";
+                            usuarioPermitido <- usuarioPermitido + 1;
+                            
+                        FinSi
+                        
+                        Si consultaPlaca = placa4 Entonces
+                            
+                            Escribir "El Vehiculo ha salido del parqueadero";
+                            Escribir "";
+                            Escribir "usuario 4";
+                            Escribir "PLACA ", placa4;
+                            Escribir "NOMBRE: ", NombreCompleto4;
+                            
+                            
+                            NumeroCel4 <- 0;
+                            NombreCompleto4 <- "";
+                            placa4 <- "";
+                            marca4 <- "";
+                            usuarioPermitido <- usuarioPermitido + 1;
+                            
+                        FinSi
+                        
+                        Si consultaPlaca = placa5 Entonces
+                            
+                            Escribir "El Vehiculo ha salido del parqueadero";
+                            Escribir "";
+                            Escribir "usuario 5";
+                            Escribir "PLACA ", placa5;
+                            Escribir "NOMBRE: ", NombreCompleto5;
+                            
+                            
+                            NumeroCel5 <- 0;
+                            NombreCompleto5 <- "";
+                            placa5 <- "";
+                            marca15<- "";
+                            usuarioPermitido <- usuarioPermitido + 1;
+                            
+                        FinSi
+                        
+                    4:
+                        Escribir "Hasta luego";
+                        Opcion <- 4;
+                    De Otro Modo:
+                        
+                        Mientras  Opcion >4 Hacer
+                            
+                            Escribir  "";
+                            Escribir "Elija una opcion valida";
+                            Opcion <- 1;
+                            
+                        FinMientras
+                        
+                        
+                FinSegun
+                
+                Escribir "";
+                
+            FinMientras
+            
+        FinProceso
+        
+         </code>
+    </pre>
+
+    <li>
+        La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad. 
+    </li>
+     <pre>
+         <code>
+            Proceso Escuela_Automovilistica
+	
+            Definir nombreCompleto1, nombreCompleto2, nombreCompleto3, nombreCompleto4, nombreCompleto5, 
+            nombreCompleto6, nombreCompleto7, nombreCompleto8 Como Caracter;
+            Definir ced1, ced2, ced3, ced4, ced5, ced6, ced7, ced8, resulPrueba1, resulPrueba2, 
+            resulPrueba3, resulPrueba4, resulPrueba5, resulPrueba6, resulPrueba7, resulPrueba8, Opcion, i, 
+            usuarioPermitido, consultaUsuario Como Entero;
+            Definir Respuesta, respuestaConsulta Como Logico;
+            
+            Opcion <- 1;
+            usuarioPermitido <- 8;
+            nombreCompleto1 <- "";
+            nombreCompleto2 <- "";
+            nombreCompleto3 <- "";
+            nombreCompleto4 <- "";
+            nombreCompleto5 <- "";
+            nombreCompleto6 <- "";
+            nombreCompleto7 <- "";
+            nombreCompleto8 <- "";
+            ced1 <- 0;
+            ced2 <- 0;
+            ced3 <- 0;
+            ced4 <- 0;
+            ced5 <- 0;
+            ced6 <- 0;
+            ced7 <- 0;
+            ced8 <- 0;
+            resulPrueba1 <- 0;
+            resulPrueba2 <- 0;
+            resulPrueba3 <- 0;
+            resulPrueba4 <- 0;
+            resulPrueba5 <- 0;
+            resulPrueba6 <- 0;
+            resulPrueba7 <- 0;
+            resulPrueba8 <- 0;
+            
+            Mientras Opcion <= 2 Hacer
+                
+                Escribir "";
+                Escribir "Bienvenido a la escuela automovilistica, A continuacion elija una opcion";
+                
+                Escribir "1. Registrar ingreso de usuarios";
+                Escribir "2. Consultar usuarios y resultados";
+                Escribir "3. Salir";
+                Leer Opcion;
+                
+                Segun Opcion Hacer
+                    1:
+                        para i <- 1 Hasta usuarioPermitido Hacer
+                            
+                            Escribir "usuarios disponibles: ", usuarioPermitido;
+                            
+                            si i=1 Y nombreCompleto1 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto1;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced1;
+                                
+                                Mientras ced1 = ced2 O ced1 = ced3 O ced1 = ced4 O ced1 = ced5 O 
+                                                ced1 = ced6 O ced1 = ced7 O ced1 = ced8 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced1;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba1;
+                                
+                                Mientras resulPrueba1 < 0 O resulPrueba1 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, 
+                                                por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba1;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 2 Y nombreCompleto2 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto2;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced2;
+                                
+                                Mientras ced2 = ced1 O ced2 = ced3 O ced2 = ced4 O ced2 = 
+                                        ced5 O ced2 = ced6 O ced2 = ced7 O ced2 = ced8 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced2;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba2;
+                                
+                                Mientras resulPrueba2 < 0 O resulPrueba2 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba2;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 3 Y nombreCompleto3 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto3;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced3;
+                                
+                                Mientras ced3 = ced1 O ced3 = ced2 O ced3 = ced4 O 
+                                        ced3 = ced5 O ced3 = ced6 O ced2 = ced3 O ced2 = ced8 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced3;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba3;
+                                
+                                Mientras resulPrueba3 < 0 O resulPrueba3 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, 
+                                                por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba3;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                            FinSi
+                            
+                            Si i = 4 Y nombreCompleto4 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto4;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced4;
+                                
+                                Mientras ced4 = ced1 O ced4 = ced2 O ced4 = ced3 O ced4 = 
+                                        ced5 O ced4 = ced6 O ced4 = ced7 O ced4 = ced8 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced4;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba4;
+                                
+                                Mientras resulPrueba4 < 0 O resulPrueba4 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, 
+                                                por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba4;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 5 Y nombreCompleto5 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto5;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced5;
+                                
+                                Mientras ced5 = ced1 O ced5 = ced2 O ced5 = ced3 O ced4 = ced5 
+                                        O ced5 = ced6 O ced5 = ced7 O ced5 = ced8 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced5;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba5;
+                                
+                                Mientras resulPrueba5 < 0 O resulPrueba5 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, 
+                                            por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba5;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 6 Y nombreCompleto6 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto6;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced6;
+                                
+                                Mientras ced6 = ced1 O ced6 = ced2 O ced6 = ced3 O ced4 = 
+                                            ced6 O ced6 = ced5 O ced6 = ced7 O ced6 = ced8 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced6;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba6;
+                                
+                                Mientras resulPrueba6 < 0 O resulPrueba6 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, 
+                                                por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba6;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 7 Y nombreCompleto7 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto7;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced7;
+                                
+                                Mientras ced7 = ced1 O ced7 = ced2 O ced7 = ced3 O ced7 = 
+                                        ced4 O ced7 = ced5 O ced7 = ced6 O ced7 = ced8 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced7;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba7;
+                                
+                                Mientras resulPrueba7 < 0 O resulPrueba7 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, 
+                                            por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba7;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si i = 8 Y nombreCompleto8 = "" Entonces
+                                
+                                Escribir "Ingrese nombre completo";
+                                Leer nombreCompleto8;
+                                
+                                Escribir "Ingrese numero de cedula";
+                                Leer ced8;
+                                
+                                Mientras ced8 = ced1 O ced8 = ced2 O ced8 = ced3 O ced8 = 
+                                            ced4 O ced8 = ced5 O ced8 = ced6 O ced8 = ced7 Hacer
+                                    
+                                    Escribir "El numero de cedula ya esta guardado";
+                                    Leer ced8;
+                                    
+                                FinMientras
+                                
+                                Escribir "Ingrese resultado de la prueba (0-100)";
+                                Leer resulPrueba8;
+                                
+                                Mientras resulPrueba8 < 0 O resulPrueba8 > 100 Hacer
+                                    
+                                    Escribir "Valor ingresado incorrectamente, 
+                                            por favor ingrese un valor entre 0-100";
+                                    Leer resulPrueba8;
+                                    
+                                FinMientras
+                                
+                                Escribir "usuario ", i, " registrado satisfactoriamente";
+                                
+                                usuarioPermitido <- usuarioPermitido - 1;
+                                
+                                
+                                Escribir "Desea registrar otro usuario";
+                                Leer Respuesta;
+                                
+                                Si Respuesta = Falso entonces 
+                                    
+                                    i <- 9;
+                                    
+                                FinSi
+                                
+                                Si usuarioPermitido = 0 Entonces
+                                    
+                                    Escribir "No se pueden registrar mas usuarios";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Limpiar Pantalla;
+                            
+                        FinPara
+                        
+                    2:
+                        
+                        Repetir
+                            Escribir "Ingrese numero de cedula del usuario a consultar";
+                            Leer consultaUsuario;
+                            
+                            Si consultaUsuario <> ced1 Y consultaUsuario <> ced2 Y consultaUsuario <> 
+                                ced3 Y consultaUsuario <> ced4 Y consultaUsuario <> ced5 Y consultaUsuario <> 
+                                ced6 Y consultaUsuario <> ced7 Y consultaUsuario <> ced8 Entonces
+                                
+                                Repetir
+                                    
+                                    Escribir "Este usuario no se encuentra registrado, por favor ingrese otro numero de cedula";
+                                    Leer consultaUsuario;
+                                    
+                                Hasta Que consultaUsuario = ced1 O consultaUsuario = ced2 O consultaUsuario = ced3 O 
+                                        consultaUsuario = ced4 O consultaUsuario = ced5 O consultaUsuario = ced6 O 
+                                        consultaUsuario = ced7 O consultaUsuario = ced8
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced1 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 1";
+                                Escribir "NOMBRE: ", NombreCompleto1;
+                                Escribir "NUMERO DE CEDULA: ", ced1;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba1;
+                                
+                                Si resulPrueba1 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced2 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 2";
+                                Escribir "NOMBRE: ", NombreCompleto2;
+                                Escribir "NUMERO DE CEDULA: ", ced2;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba2;
+                                
+                                Si resulPrueba2 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced3 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 3";
+                                Escribir "NOMBRE: ", NombreCompleto3;
+                                Escribir "NUMERO DE CEDULA: ", ced3;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba3;
+                                
+                                Si resulPrueba3 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced4 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 4";
+                                Escribir "NOMBRE: ", NombreCompleto4;
+                                Escribir "NUMERO DE CEDULA: ", ced4;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba4;
+                                
+                                Si resulPrueba4 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced5 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 5";
+                                Escribir "NOMBRE: ", NombreCompleto5;
+                                Escribir "NUMERO DE CEDULA: ", ced5;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba5;
+                                
+                                Si resulPrueba5 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced6 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 6";
+                                Escribir "NOMBRE: ", NombreCompleto6;
+                                Escribir "NUMERO DE CEDULA: ", ced6;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba6;
+                                
+                                Si resulPrueba6 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced7 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 7";
+                                Escribir "NOMBRE: ", NombreCompleto7;
+                                Escribir "NUMERO DE CEDULA: ", ced7;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba7;
+                                
+                                Si resulPrueba7 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Si consultaUsuario = ced8 Entonces
+                                
+                                Escribir "";
+                                Escribir "USUARIO 8";
+                                Escribir "NOMBRE: ", NombreCompleto8;
+                                Escribir "NUMERO DE CEDULA: ", ced8;
+                                Escribir "RESULTADO DEL CURSO: ", resulPrueba8;
+                                
+                                Si resulPrueba8 < 80 Entonces
+                                    
+                                    Escribir "El usuario no aprobo el curso";
+                                    
+                                SiNo
+                                    
+                                    Escribir "El usuario aprobo el curso";
+                                    
+                                FinSi
+                                
+                            FinSi
+                            
+                            Escribir "Desea consultar otro usuario?";
+                            Leer respuestaConsulta;
+                            
+                        Hasta Que respuestaConsulta = Falso;
+                        
+                    3:
+                        Escribir "Hasta luego";
+                        Opcion <- 3;
+                    De Otro Modo:
+                        
+                        Mientras  Opcion >3 Hacer
+                            
+                            Escribir  "";
+                            Escribir "Elija una opcion valida";
+                            Opcion <- 1;
+                            
+                        FinMientras
+                        
+                FinSegun
+                
+            FinMientras
+            
+            
+        FinProceso
+        
+         </code>
+    </pre>
+
+   
+ </ol>
+   
+<div class="video">
+ <iframe width="560" height="315" src="https://www.youtube.com/embed/1FT68sz_bP0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></body>
+</div>
+</div>
+</body>
+ </html>

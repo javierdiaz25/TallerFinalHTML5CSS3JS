@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+    <script async src="index.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="bloqueGeneral">
+    <header>
+        <a id="index" href="index.html">
+          <butt>
+            Inicio
+          </butt>
+        </a>
+  
+        <select id="seleccionarTema" onchange='cambiar()'>
+          <option value="light">Light</option>
+          <option value="blue">Blue</option>
+          <option value="space">Space</option>
+        </select>
+  
+        <a id="ejercicios" href="/ejercicios.html">
+            <butt>
+              Ejercicios
+            </butt>
+          </a>
+      </header>
+  <h1 class="tituloTaller">Taller de Ciclos</h1>
+  <p>
+    A continuación se describirán los ejercicios que deberá realizar. Por favor guardar los ejercicios dado que serán requeridos en entregas posteriores. Todos los ejercicios deben estar escritos en PSeInt con el perfil Estricto.     
+</p>
+ <ol>
+     <li>
+        Realizar la siguiente figura por medio del ciclo Para
+      </li>
+     <pre>
+         <code>
+            package Ciclos;
+
+public class Ejercicio1 {
+    private static Integer i,j;
+
+    public static void main(String[] args) {
+        imprimirFigura();
+    }
+
+    private static void imprimirFigura() {
+        for (i = 1; i <= 10; i++) {
+            for (j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+         </code>
+     </pre>
+
+     <li>
+        Realizar la siguiente figura por medio del ciclo Mientras - Hacer.
+    </li>
+     <pre>
+         <code>
+            package Ciclos;
+
+            public class Ejercicio2 {
+            
+                private static Integer i,j;
+            
+                public static void main(String[] args) {
+                    imprimirFigura();
+                }
+            
+                private static void imprimirFigura() {
+                    for(i = 10; i >= 1; i--) {
+                        for(j = 1; j <= i; j++) {
+                            System.out.print(" ");
+                        }
+                        for(j = i; j <= 10; ++j) {
+                            System.out.print("*");
+                        }
+                        System.out.println();
+                    }
+                }
+            
+            }
+         </code>
+    </pre>
+
+    <li>
+        Realizar la siguiente figura por medio del ciclo Repetir - Hasta Que  
+    </li>
+     <pre>
+         <code>
+            package Ciclos;
+
+            public class Ejercicio3 {
+            
+                public static void main(String[] args) {
+                    imprimirGrafico();
+                }
+            
+            
+                private static void imprimirGrafico() {
+                    int i, j, k;
+                    k = 1;
+            
+                    for (i = 0; i <= 15; i++) {
+                        while (i < 11) {
+                            for (j = 10; j >= i; j--) {
+                                System.out.print(" ");
+                            }
+                            for (j = 0; j <= (2 * i); j++) {
+                                System.out.print("*");
+                            }
+                            System.out.println();
+                            i++;
+                        }
+            
+                        while (i >= 12 & i <= 13) {
+                            for (j = 0; j <= 9; j++) {
+                                System.out.print(" ");
+                            }
+                            for (j = 1; j <= 3; j++) {
+                                System.out.print("*");
+                            }
+                            System.out.println();
+                            i++;
+                        }
+            
+                        while (i >= 14 & i <= 15) {
+                            for (j = 9; j >= k; j--) {
+                                System.out.print(" ");
+                            }
+                            for (j = 0; j <= (2 * k) + 2; j++) {
+                                System.out.print("*");
+                            }
+                            System.out.println();
+                            i++;
+                            k = k + 1;
+                        }
+                    }
+                }
+            }
+            
+            
+         </code>
+    </pre>
+
+    <li>
+        Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por medio del ciclo Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear la tabla del 5, entonces el resultado debería ser el siguiente:
+    </li>
+     <pre>
+         <code>
+            package Ciclos;
+
+            import java.util.Scanner;
+            
+            public class Ejercicio4 {
+                private static Scanner input = new Scanner(System.in);
+                private static Integer i, num, resul;
+            
+                public static void main(String[] args) {
+                    capturarNumero();
+                    imprimirTabla();
+                }
+            
+                private static void capturarNumero() {
+                    System.out.println("Ingrese el numero del cual desea ver la tabla");
+                    num =  input.nextInt();
+                }
+            
+                private static void imprimirTabla() {
+                    for (i=1;i<=10;i++) {
+                        resul = i * num;
+                        System.out.println(i + " x " + num + " = " + resul);
+                    }
+                }
+            }
+         </code>
+    </pre>
+
+    <li>
+        Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee terminar dicho ciclo.
+    </li>
+     <pre>
+         <code>
+            package Ciclos;
+
+import java.util.Scanner;
+
+public class Ejercicio5 {
+
+    private static final Scanner inputInteger = new Scanner(System.in);
+    private static final Scanner inputString = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        Integer opcionMenu;
+        opcionMenu = 1;
+
+        while (opcionMenu!=3) {
+            opcionMenu = imprimirMenu();
+            evaluarOpcionMenu(opcionMenu);
+        }
+    }
+
+    private static Integer imprimirMenu() {
+        System.out.println("Menu de usuario");
+        System.out.println("1. Capturar nombre");
+        System.out.println("2. Saludar persona");
+        System.out.println("3. Salir del sistema");
+        return inputInteger.nextInt();
+    }
+
+    private static void evaluarOpcionMenu(Integer opcion) {
+        String nombre;
+
+        switch (opcion) {
+            case 1 -> {
+                nombre = capturarNombre();
+                System.out.println(nombre + " su nombre ha sido guardado correctamente");
+            }
+            case 2 -> {
+                nombre = capturarNombre();
+                System.out.println("Hola " + nombre);
+            }
+            case 3 -> System.out.println("Hasta luego");
+            default -> System.out.println("Opcion invalida");
+        }
+    }
+    private static String capturarNombre() {
+        System.out.println("Ingrese su nombre");
+        return inputString.nextLine();
+    }
+
+}
+
+            
+         </code>
+    </pre>
+
+    <li>
+        Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos telefónicos en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y organización. Se requiere que la aplicación permita añadir 3 contactos verificando que el número no esté almacenado, buscar contactos almacenados y eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo indique.
+    </li>
+     <pre>
+         <code>
+            package Ciclos.Ejercicio6;
+
+            import java.util.Scanner;
+            
+            public class Ejercicio6 {
+            
+                public static void main(String[] args) {
+            
+                    Menu misContactos = new Menu();
+                    misContactos.inicializarArreglo();
+            
+                    int codigo;
+            
+                    do {
+                        codigo = opcionMenu();
+                        evaluarMenu(codigo,misContactos);
+                    } while (codigo != 4);
+            
+            
+                }
+            
+                private static Integer opcionMenu() {
+                    Scanner inputInteger = new Scanner(System.in);
+            
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Bienvenido, A continuacion elija una opcion");
+                    System.out.println("-------------------------------------------");
+                    System.out.println("1. Crear contacto");
+                    System.out.println("2. Mostrar contactos");
+                    System.out.println("3. Eliminar contacto");
+                    System.out.println("4. Salir");
+                    System.out.println("-------------------------------------------");
+                    return inputInteger.nextInt();
+                }
+            
+                public static void evaluarMenu(int opcion, Menu misContactos) {
+                    int contadorUsuario;
+            
+                    contadorUsuario = misContactos.contadorObjeto+1;
+            
+                    switch (opcion) {
+                        case 1:
+                            if (misContactos.contadorObjeto < 3) {
+                                System.out.println("Usuario:" + contadorUsuario);
+                                misContactos.crearContacto();
+                            } else {
+                                System.out.println("No se aceptan mas contactos");
+                            }
+            
+                            break;
+            
+                        case 2:
+                            misContactos.Mostrar();
+                            break;
+            
+                        case 3:
+                            misContactos.eliminarContacto();
+                            break;
+            
+                        case 4:
+                            misContactos.salir();
+                            break;
+            
+                        default:
+                            System.out.println("Opcion invalida");
+                            break;
+                    }
+                }
+            
+            }
+            
+         </code>
+    </pre>
+
+    <li>
+        El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y requiere una aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere que el parqueadero tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son nombre completo y número de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero, retirar del parqueadero y consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos. 
+    </li>
+     <pre>
+         <code>
+            package Ciclos.Ejercicio7;
+
+            import java.util.Scanner;
+            
+            public class Ejercicio7 {
+            
+                public static void main(String[] args) {
+            
+                    Menu misUsuarios = new Menu();
+                    misUsuarios.inicializarArreglo();
+            
+                    int codigo;
+            
+                    do {
+                        codigo = opcionMenu();
+                        evaluarMenu(codigo, misUsuarios);
+                    } while (codigo != 4);
+            
+                }
+            
+                private static Integer opcionMenu() {
+                    Scanner inputInteger = new Scanner(System.in);
+            
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Bienvenido, A continuacion elija una opcion");
+                    System.out.println("-------------------------------------------");
+                    System.out.println("1. Ingresar Vehiculo");
+                    System.out.println("2. Retirar Vehiculo");
+                    System.out.println("3. Consultar Vehiculo");
+                    System.out.println("4. Salir");
+                    System.out.println("-------------------------------------------");
+                    return inputInteger.nextInt();
+                }
+            
+                public static void evaluarMenu(int opcion, Menu misUsuarios) {
+                    int contadorUsuario;
+            
+                    contadorUsuario = misUsuarios.contadorObjeto + 1;
+            
+                    switch (opcion) {
+                        case 1:
+            
+                            if (misUsuarios.contadorObjeto < 8) {
+                                System.out.println("Usuario:" + contadorUsuario);
+                                misUsuarios.crearUsuario();
+                            } else System.out.println("El parqueadero está lleno");
+                            break;
+                        case 2:
+                            misUsuarios.eliminarUsuario();
+                            break;
+            
+                        case 3:
+                            misUsuarios.mostrar();
+                            break;
+            
+                        case 4:
+                            misUsuarios.salir();
+                            break;
+            
+                        default:
+                            System.out.println("Opcion invalida");
+                            break;
+                    }
+                }
+            }
+               </code>
+    </pre>
+
+    <li>
+        La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8 usuarios en su totalidad. 
+    </li>
+     <pre>
+         <code>
+            package Ciclos.Ejercicio8;
+
+            import java.util.Scanner;
+            
+            public class Ejercicio8 {
+            
+                public static void main(String[] args) {
+            
+                   Menu misUsuarios = new Menu();
+                    misUsuarios.inicializarArreglo();
+            
+                    int codigo;
+            
+                    do {
+                        codigo = opcionMenu();
+                        evaluarMenu(codigo, misUsuarios);
+                    } while (codigo != 3);
+            
+            
+                }
+            
+            
+                private static Integer opcionMenu() {
+                    Scanner inputInteger = new Scanner(System.in);
+            
+                    System.out.println("-------------------------------------------");
+                    System.out.println("Bienvenido a la escuela automovilistica, A continuacion elija una opcion");
+                    System.out.println("-------------------------------------------");
+                    System.out.println("1. Registrar ingreso de usuarios");
+                    System.out.println("2. Consultar usuarios y resultados");
+                    System.out.println("3. Salir");
+                    System.out.println("-------------------------------------------");
+                    return inputInteger.nextInt();
+                }
+            
+                public static void evaluarMenu(int opcion, Menu misUsuarios) {
+            
+                    int contadorUsuario;
+            
+                    contadorUsuario = misUsuarios.contadorObjeto+1;
+            
+                    switch (opcion) {
+                        case 1:
+                            if (misUsuarios.contadorObjeto < 8) {
+                                System.out.println("Usuario:" + contadorUsuario);
+                                misUsuarios.crearUsuario();
+                            }
+                            else System.out.println("No se aceptan mas usuarios");
+                            break;
+            
+                        case 2:
+                            misUsuarios.mostrar();
+                            break;
+            
+                        case 3:
+                            misUsuarios.salir();
+                            break;
+            
+                        default:
+                            System.out.println("Opcion invalida");
+                            break;
+                    }
+                }
+            
+            
+            }
+             
+            
+         </code>
+    </pre>
+ 
+ </ol>
+</div>
+ </body>
+
+ </html>
